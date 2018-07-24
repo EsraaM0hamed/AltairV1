@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Rybari</string>
+    <string name="login">"Přihlášení "</string>
+    <string name="login_with_fb">Login With Facebook</string>
+    <string name="or">OR</string>
+    <string name="info">Pokud si přejete přidat nějaký text,
+Přizpůsobte si, jak to vidíte </string>
+    <string name="hint">    E_mail</string>
+    <string name="password">   heslo</string>
+    <string name="forget_password">Zapomenuté Heslo?</string>
+    <string name="login_btn">Přihlásí se</string>
+    <string name="register_text">Nemáte účet?</string>
+    <string name="register_link">Přihlásit se</string>
+    <string name="facebook_app_id">2312174309009708</string>
+    <string name="fb_login_protocol_scheme">fb2312174309009708</string>
+    <string name="login_with_fb_title">Pokračujte Ve Facebooku</string>
 </resources>

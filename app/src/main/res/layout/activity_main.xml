@@ -1,18 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/home_bg"
+    tools:context=".main.view.MainActivity">
 
-    <TextView
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+
+        android:layout_alignParentTop="true"
+        android:background="@color/actionBarColor">
+
+        <LinearLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/basic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--<ImageView-->
+                <!--android:id="@+id/personal_photo"-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_margin="4dp"-->
+                <!--android:background="@color/actionBarColor">-->
+
+                <!--</ImageView>-->
+
+
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginLeft="4dp"-->
+                <!--android:orientation="vertical">-->
+                <ImageView
+                    android:id="@+id/usImage"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/usImage"
+                    android:text="carpmaster"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/roboto_bold" />
+
+                <TextView
+                    android:id="@+id/expire_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/usImage"
+                    android:text="Vyprsi 25-3-2018"
+                    android:textColor="@color/com_facebook_button_background_color_focused"
+                    android:textSize="10sp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/user_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fish_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="10dp"
+                    android:drawableTop="@drawable/number_fish"
+                    android:gravity="center"
+                    android:text="35"
+                    android:textColor="@color/com_facebook_button_background_color_focused"
+                    android:textSize="10sp"
+                    app:fontFamily="@font/roboto_bold" />
+
+                <TextView
+                    android:id="@+id/fb_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_margin="10dp"
+                    android:drawableTop="@drawable/facebook_group"
+                    android:gravity="center"
+                    android:text="Group"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    app:fontFamily="@font/roboto_bold" />
+
+                <TextView
+                    android:id="@+id/user_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:drawableTop="@drawable/premium_account"
+                    android:gravity="center"
+                    android:text="Premium"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    app:fontFamily="@font/roboto_bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/topControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/finished_races"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/home_screen_buttons"
+            android:drawableTop="@drawable/finished_icon"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:text="Ukončené   "
+            android:textAllCaps="false"
+            android:textColor="@color/buttonFontColor"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/hook"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="@drawable/home_screen_buttons"
+            android:drawableTop="@drawable/hook"
+            android:paddingTop="10dp" />
+
+
+        <Button
+            android:id="@+id/ongoingRaces"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignTop="@+id/finished_races"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/home_screen_buttons"
+            android:drawableTop="@drawable/ongoing"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingLeft="9dp"
+            android:paddingTop="10dp"
+            android:text="Probíhající    "
+            android:textAllCaps="false"
+            android:textColor="@color/buttonFontColor"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ads_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_above="@+id/navigation_bottom"
+        android:layout_alignBottom="@+id/topControl"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/topControl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp"
+        android:layout_marginTop="1dp">
 
-</android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ads"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:scrollbars="none">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@null"
+        app:menu="@menu/bottom_navigation"></android.support.design.widget.BottomNavigationView>
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/bottomtoolBar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:background="@android:color/transparent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:weightSum="5">-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginBottom="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/com_facebook_button_background"></RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"></RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"></RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"></RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"></RelativeLayout>-->
+    <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.Toolbar>-->
+
+
+</RelativeLayout>
